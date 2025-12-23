@@ -10,7 +10,7 @@ const Hero: React.FC<HeroProps> = ({ onAddServiceTip }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 mb-4">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-slate-900">
-            112.126.104.212 容器服务入口
+            容器服务入口
           </span>
         </h1>
         <p className="mt-5 max-w-2xl mx-auto text-xl text-slate-500">

@@ -2,7 +2,7 @@
 import { Terminal, Box } from 'lucide-react';
 import { ServiceItem } from './types';
 
-const DEFAULT_DOMAIN = '112.126.104.212';
+const DEFAULT_DOMAIN = 'localhost';
 const isBrowser = typeof window !== 'undefined';
 const hostname = isBrowser && window.location.hostname ? window.location.hostname : DEFAULT_DOMAIN;
 const defaultProtocol = isBrowser && window.location.protocol === 'https:' ? 'https' : 'http';
@@ -13,7 +13,6 @@ export const SERVICES: ServiceItem[] = [
     name: 'YOLO识别',
     description: '运行在 Docker 容器中的 YOLO 识别服务（端口 8000）。',
     port: 8000,
-    host: DEFAULT_DOMAIN,
     protocol: 'http',
     icon: <Terminal className="w-6 h-6" />,
     status: 'active',
@@ -34,7 +33,7 @@ export const buildServiceUrl = (service: ServiceItem): string => {
   if (service.url) return service.url;
 
   const protocol = service.protocol ?? defaultProtocol;
-  const host = service.host ?? hostname ?? DEFAULT_DOMAIN;
+  const host = service.host ?? hostname;
 
   if (service.port) {
     return `${protocol}://${host}:${service.port}`;

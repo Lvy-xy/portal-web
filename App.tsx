@@ -40,7 +40,7 @@ const App: React.FC = () => {
             <p className="text-sm text-slate-600 leading-relaxed mb-6">
               在 <code className="font-mono text-xs bg-gray-100 px-1.5 py-0.5 rounded">constants.tsx</code> 的{' '}
               <code className="font-mono text-xs bg-gray-100 px-1.5 py-0.5 rounded">SERVICES</code> 数组中添加新条目：
-              设置 <strong>host</strong>（默认为 112.126.104.212）、<strong>port</strong>，或直接填写 <strong>url</strong>；
+              设置 <strong>host</strong>（默认使用当前访问域名）、<strong>port</strong>，或直接填写 <strong>url</strong>；
               <strong>status</strong> 设为 <em>active</em>/<em>coming-soon</em>/<em>maintenance</em>。
             </p>
             <div className="flex justify-end gap-2">

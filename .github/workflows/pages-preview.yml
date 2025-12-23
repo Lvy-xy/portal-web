@@ -2,7 +2,7 @@ name: Build and Deploy Preview
 
 on:
   push:
-    branches: [dev]
+    branches: [dev, main]
   workflow_dispatch:
 
 permissions:
@@ -25,7 +25,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+<<<<<<< HEAD
           cache: npm
+=======
+>>>>>>> 68c0eba4de55498eb9336eb0cd30d96ee6a2b905
 
       - name: Install dependencies
         run: npm install
@@ -41,6 +44,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
+<<<<<<< HEAD
+=======
+    if: github.ref == 'refs/heads/main'
+>>>>>>> 68c0eba4de55498eb9336eb0cd30d96ee6a2b905
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
